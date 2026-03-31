@@ -24,6 +24,10 @@ jobs:
           HOST: ${{ secrets.EC2_HOST_PROD }}
         run: |
           set -euo pipefail
+          if ! command -v rsync >/dev/null 2>&1; then
+            sudo apt-get update -qq
+            sudo apt-get install -y rsync
+          fi
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
