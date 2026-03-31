@@ -66,12 +66,23 @@ jobs:
             set -euo pipefail
             cd /home/ec2-user/landing-page
             if ! command -v node >/dev/null 2>&1; then
-              echo "ERROR: Node.js is not installed on EC2. Install Node 20+ (see school-erp-infra AWS guide + landing deploy steps)."
-              exit 1
+              if command -v dnf >/dev/null 2>&1; then
+                curl -fsSL https://rpm.nodesource.com/setup_20.x | sudo bash -
+                sudo dnf install -y nodejs
+              elif command -v yum >/dev/null 2>&1; then
+                curl -fsSL https://rpm.nodesource.com/setup_20.x | sudo bash -
+                sudo yum install -y nodejs
+              elif command -v apt-get >/dev/null 2>&1; then
+                curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+                sudo apt-get install -y nodejs
+              else
+                echo "ERROR: Install Node.js 20+ on this host manually (unsupported package manager)."
+                exit 1
+              fi
             fi
+            node -v
             if ! command -v pm2 >/dev/null 2>&1; then
-              echo "ERROR: pm2 is not installed. Run: sudo npm install -g pm2"
-              exit 1
+              sudo npm install -g pm2
             fi
             npm ci
             npm run build
