@@ -3,9 +3,7 @@ name: Build landing-page on EC2 (production, non-Docker)
 on:
   push:
     branches: [main]
-    paths:
-      - "landing-page/**"
-      - "landing-page/.github/workflows/landing-page-ec2-deploy.yml"
+    # Monorepo (app in subfolder): add e.g. paths: [ "landing-page/**" ]
   workflow_dispatch:
 
 permissions:
@@ -43,12 +41,19 @@ jobs:
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -H "$HOST" >> ~/.ssh/known_hosts 2>/dev/null || true
+          # Monorepo: sync ./landing-page/ — standalone repo: sync repo root (./)
+          if [ -d "./landing-page" ]; then
+            RSYNC_SRC="./landing-page/"
+          else
+            RSYNC_SRC="./"
+          fi
           rsync -avz --delete \
             --exclude 'node_modules' \
             --exclude '.next' \
             --exclude '.git' \
+            --exclude '.github' \
             -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new" \
-            ./landing-page/ "ec2-user@${HOST}:/home/ec2-user/landing-page/"
+            "$RSYNC_SRC" "ec2-user@${HOST}:/home/ec2-user/landing-page/"
 
       - name: Install deps, build, restart PM2 on EC2
         uses: appleboy/ssh-action@v1.0.3
