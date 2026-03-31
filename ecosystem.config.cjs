@@ -4,9 +4,9 @@ module.exports = {
     {
       name: "landing-page",
       cwd: "/home/ec2-user/landing-page",
-      script: "npm",
-      args: "run start",
-      interpreter: "none",
+      script: "./node_modules/next/dist/bin/next",
+      args: "start -p 7000",
+      interpreter: "node",
       env: {
         NODE_ENV: "production",
       },

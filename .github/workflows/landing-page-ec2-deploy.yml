@@ -86,9 +86,7 @@ jobs:
             fi
             npm ci
             npm run build
-            if pm2 describe landing-page >/dev/null 2>&1; then
-              pm2 restart landing-page --update-env
-            else
-              pm2 start ecosystem.config.cjs
-            fi
+            # Clean (re)start: avoids set -e failing on a flaky `pm2 restart --update-env`
+            pm2 delete landing-page 2>/dev/null || true
+            pm2 start ecosystem.config.cjs
             pm2 save
