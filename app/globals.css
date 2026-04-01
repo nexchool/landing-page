@@ -125,16 +125,8 @@ a.logo:hover {
 .logo-mark {
   width: 32px;
   height: 32px;
-  background: var(--ink);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo-mark svg {
-  width: 18px;
-  height: 18px;
+  flex-shrink: 0;
+  display: block;
 }
 
 nav ul.nav-desktop {
