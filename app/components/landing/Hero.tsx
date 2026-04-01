@@ -1,5 +1,7 @@
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { brand } from "./brand";
+import { site } from "@/site";
+import { landingSectionHref } from "./landingSectionQuery";
 import { HeroDashboard } from "./dashboard/HeroDashboard";
 
 type TrustAvatar = { initials: string; bg: string; fg?: string };
@@ -29,16 +31,16 @@ export function Hero() {
             <span className="line3">Finally Effortless.</span>
           </h1>
             <p className="hero-desc">
-              {brand.name} is the business-grade school management platform that handles attendance,
+              {site.name} is the business-grade school management platform that handles attendance,
               fees, results, parent communication and more — in one beautifully simple system.
             </p>
           <div className="hero-actions">
-            <a href="#cta" className="btn-main">
+            <Link href={landingSectionHref("cta")} className="btn-main" scroll={false}>
               Book a Free Demo <ArrowRight size={16} className="arrow" aria-hidden />
-            </a>
-            <a href="#features" className="btn-outline">
+            </Link>
+            <Link href={landingSectionHref("features")} className="btn-outline" scroll={false}>
               See Features
-            </a>
+            </Link>
           </div>
           <div className="hero-trust">
             <div className="trust-avatars">
@@ -49,7 +51,7 @@ export function Hero() {
               ))}
             </div>
             <div className="trust-text">
-              <strong>500+ school leaders</strong> chose {brand.name} this year
+              <strong>500+ school leaders</strong> chose {site.name} this year
             </div>
           </div>
         </div>

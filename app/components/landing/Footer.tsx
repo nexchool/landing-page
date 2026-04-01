@@ -1,24 +1,29 @@
-import { brand } from "./brand";
+import Link from "next/link";
+import { site } from "@/site";
+import { landingSectionHref } from "./landingSectionQuery";
 
 const FOOTER_LINKS = [
-  { href: "#features", label: "Features" },
-  { href: "#pricing", label: "Pricing" },
-  { href: "#about", label: "About" },
-  { href: "#", label: "Privacy" },
+  { href: landingSectionHref("features"), label: "Features" },
+  { href: landingSectionHref("pricing"), label: "Pricing" },
+  { href: landingSectionHref("about"), label: "About" },
+  { href: "/privacy", label: "Privacy" },
+  { href: "/terms", label: "Terms" },
 ] as const;
 
 export function Footer() {
   return (
     <footer>
-      <div className="ft-logo">{brand.name}</div>
+      <div className="ft-logo">{site.name}</div>
       <div className="ft-links">
         {FOOTER_LINKS.map(({ href, label }) => (
-          <a key={label} href={href}>
+          <Link key={label} href={href} scroll={href.startsWith("/?") ? false : true}>
             {label}
-          </a>
+          </Link>
         ))}
       </div>
-      <div className="ft-copy">© 2025 {brand.name}. Made with care in India.</div>
+      <div className="ft-copy">
+        © {site.copyrightYear} {site.name}. Made with care in India.
+      </div>
     </footer>
   );
 }

@@ -1,5 +1,5 @@
 import { Bell, CreditCard, IndianRupee, UserCheck } from "lucide-react";
-import { brand } from "../brand";
+import { site } from "@/site";
 import { ATTENDANCE_BARS, barStyle } from "../data/dashboard";
 import { palette } from "../theme";
 import { DbNotification } from "./DbNotification";
@@ -25,7 +25,7 @@ export function HeroDashboard() {
             <div className="db-dot" style={{ background: "#febc2e" }} />
             <div className="db-dot" style={{ background: "#28c840" }} />
           </div>
-          <div className="db-title">{brand.name} — Admin Dashboard</div>
+          <div className="db-title">{site.name} — Admin Dashboard</div>
         </div>
         <div className="db-body">
           <div className="mini-stats">

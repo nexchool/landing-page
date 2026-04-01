@@ -1,5 +1,5 @@
 import { Mail, Phone } from "lucide-react";
-import { brand } from "./brand";
+import { site } from "@/site";
 
 export function Cta() {
   return (
@@ -9,17 +9,17 @@ export function Cta() {
           Ready to make your school <em>unstoppable?</em>
         </h2>
         <p>
-          Join 500+ schools already running smarter with {brand.name}. Book a free 30-minute demo —
+          Join 500+ schools already running smarter with {site.name}. Book a free 30-minute demo —
           no commitment, no credit card.
         </p>
         <div className="cta-btns">
-          <a href={brand.phoneHref} className="btn-gold">
+          <a href={site.phoneHref} className="btn-gold">
             <Phone size={18} strokeWidth={2} aria-hidden />
-            Call Now: {brand.phoneDisplay}
+            Call Now: {site.phoneDisplay}
           </a>
-          <a href={`mailto:${brand.email}`} className="btn-ghost-white">
+          <a href={`mailto:${site.email}`} className="btn-ghost-white">
             <Mail size={18} strokeWidth={2} aria-hidden />
-            {brand.email}
+            {site.email}
           </a>
         </div>
       </div>

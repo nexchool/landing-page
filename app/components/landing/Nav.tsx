@@ -1,14 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { ArrowRight, Menu, X } from "lucide-react";
-import { brand } from "./brand";
+import { site } from "@/site";
 import { LogoMark } from "./LogoMark";
+import { landingSectionHref } from "./landingSectionQuery";
 
 const NAV_LINKS = [
-  { href: "#features", label: "Features" },
-  { href: "#pricing", label: "Pricing" },
-  { href: "#about", label: "About" },
+  { href: landingSectionHref("features"), label: "Features" },
+  { href: landingSectionHref("pricing"), label: "Pricing" },
+  { href: landingSectionHref("about"), label: "About" },
 ] as const;
 
 export function Nav() {
@@ -45,22 +47,24 @@ export function Nav() {
   return (
     <nav>
       <div className="nav-row">
-        <a href="#" className="logo" onClick={close}>
+        <Link href="/" className="logo" onClick={close}>
           <LogoMark />
-          {brand.name}
-        </a>
+          {site.name}
+        </Link>
 
         <ul className="nav-desktop" aria-label="Primary">
           {NAV_LINKS.map(({ href, label }) => (
             <li key={href}>
-              <a href={href}>{label}</a>
+              <Link href={href} scroll={false}>
+                {label}
+              </Link>
             </li>
           ))}
           <li>
-            <a href="#cta" className="nav-pill">
+            <Link href={landingSectionHref("cta")} className="nav-pill" scroll={false}>
               Book Demo
               <ArrowRight size={14} strokeWidth={2} aria-hidden />
-            </a>
+            </Link>
           </li>
         </ul>
 
@@ -87,16 +91,21 @@ export function Nav() {
             <ul>
               {NAV_LINKS.map(({ href, label }) => (
                 <li key={href}>
-                  <a href={href} onClick={close}>
+                  <Link href={href} scroll={false} onClick={close}>
                     {label}
-                  </a>
+                  </Link>
                 </li>
               ))}
               <li>
-                <a href="#cta" className="nav-pill nav-pill--block" onClick={close}>
+                <Link
+                  href={landingSectionHref("cta")}
+                  className="nav-pill nav-pill--block"
+                  scroll={false}
+                  onClick={close}
+                >
                   Book Demo
                   <ArrowRight size={14} strokeWidth={2} aria-hidden />
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

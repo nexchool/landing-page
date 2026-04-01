@@ -1,5 +1,5 @@
 import { Globe2, Headphones, ShieldCheck, Star, Trophy, Zap } from "lucide-react";
-import { brand } from "./brand";
+import { site } from "@/site";
 
 const VALUES = [
   {
@@ -31,11 +31,11 @@ export function About() {
     <section className="about" id="about">
       <div className="about-inner">
         <div>
-          <div className="about-label reveal">About {brand.name}</div>
+          <div className="about-label reveal">About {site.name}</div>
           <h2 className="reveal">Built by people who ran schools. Not just engineers.</h2>
           <p className="about-body reveal">
             We are a team of ed-tech professionals and former school administrators who lived the
-            chaos of manual paperwork, missed parent calls, and lost fee records. {brand.name} was
+            chaos of manual paperwork, missed parent calls, and lost fee records. {site.name} was
             born from that frustration.
           </p>
           <p className="about-body reveal">
@@ -59,7 +59,7 @@ export function About() {
           <div className="about-main-card">
             <div className="amc-num">500+</div>
             <div className="amc-text">
-              Schools trust {brand.name} to manage
+              Schools trust {site.name} to manage
               <br />
               their daily operations
             </div>
