@@ -28,6 +28,7 @@ jobs:
             if ! command -v rsync >/dev/null 2>&1; then
               sudo dnf install -y rsync 2>/dev/null || sudo yum install -y rsync
             fi
+            mkdir -p /home/ec2-user/main-web/landing-page
 
       - name: Rsync source to EC2
         env:
@@ -53,7 +54,7 @@ jobs:
             --exclude '.git' \
             --exclude '.github' \
             -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new" \
-            "$RSYNC_SRC" "ec2-user@${HOST}:/home/ec2-user/landing-page/"
+            "$RSYNC_SRC" "ec2-user@${HOST}:/home/ec2-user/main-web/landing-page/"
 
       - name: Install deps, build, restart PM2 on EC2
         uses: appleboy/ssh-action@v1.0.3
@@ -64,7 +65,7 @@ jobs:
           script_stop: true
           script: |
             set -euo pipefail
-            cd /home/ec2-user/landing-page
+            cd /home/ec2-user/main-web/landing-page
             if ! command -v node >/dev/null 2>&1; then
               if command -v dnf >/dev/null 2>&1; then
                 curl -fsSL https://rpm.nodesource.com/setup_20.x | sudo bash -
