@@ -1,9 +1,9 @@
 import {
-  BarChart3,
-  BookOpen,
+  Bell,
   Bus,
   CalendarDays,
   ClipboardCheck,
+  GraduationCap,
   Smartphone,
   UsersRound,
   Wallet,
@@ -28,17 +28,17 @@ export function Features() {
           <FeatureIconBox background="rgba(201,168,76,.15)">
             <ClipboardCheck size={ICON} strokeWidth={SW} color={palette.gold} aria-hidden />
           </FeatureIconBox>
-          <h3>Smart Attendance System</h3>
+          <h3>Attendance, Done in Minutes</h3>
           <p>
-            Mark attendance in seconds via manual entry, QR code, or biometric integration.
-            Real-time dashboards show class-wise and student-wise trends. Automated SMS alerts reach
-            parents the moment their child is marked absent.
+            Mark attendance class-by-class or view it student-by-student. A calendar view and full
+            history show class-wise trends at a glance, and absence notifications reach parents the
+            moment a child is marked absent — every record synced live to the mobile app.
           </p>
           <div className="pill-strip">
-            <span className="pill">QR Code</span>
-            <span className="pill">Biometric</span>
-            <span className="pill">Parent SMS</span>
-            <span className="pill">Reports</span>
+            <span className="pill">Class-wise</span>
+            <span className="pill">Calendar View</span>
+            <span className="pill">Absence Alerts</span>
+            <span className="pill">Full History</span>
           </div>
         </div>
 
@@ -46,10 +46,10 @@ export function Features() {
           <FeatureIconBox background={palette.jadeLt}>
             <Wallet size={ICON} strokeWidth={SW} color={palette.jade} aria-hidden />
           </FeatureIconBox>
-          <h3>Fee Management</h3>
+          <h3>Fees & Finance</h3>
           <p>
-            Online & offline payment tracking, automatic reminders, defaulter lists, and instant
-            receipts — all paperless.
+            Build fee structures, raise student invoices, record payments, and generate instant PDF
+            receipts — paperless, with defaulters visible at a glance.
           </p>
           <div className="mini-screen">
             <div className="ms-row">
@@ -78,12 +78,12 @@ export function Features() {
 
         <div className="fb c4 reveal">
           <FeatureIconBox background={palette.pinkBg}>
-            <BarChart3 size={ICON} strokeWidth={SW} color={palette.rose} aria-hidden />
+            <GraduationCap size={ICON} strokeWidth={SW} color={palette.rose} aria-hidden />
           </FeatureIconBox>
-          <h3>Exam & Results</h3>
+          <h3>Student Records</h3>
           <p>
-            Create exams, enter marks, and auto-generate beautiful report cards. Share with parents
-            instantly via app or PDF.
+            One profile per student — class assignment, document uploads, bulk import, and one-click
+            promotions at year-end.
           </p>
         </div>
 
@@ -91,10 +91,10 @@ export function Features() {
           <FeatureIconBox background={palette.violetBg}>
             <Smartphone size={ICON} strokeWidth={SW} color="#6366f1" aria-hidden />
           </FeatureIconBox>
-          <h3>Parent App</h3>
+          <h3>Mobile App</h3>
           <p>
-            Dedicated parent app showing live attendance, results, fee status, timetable, and
-            school notifications.
+            An iOS & Android app for teachers and students — live attendance, daily schedule, fee
+            status, and school notifications in one place.
           </p>
         </div>
 
@@ -102,10 +102,10 @@ export function Features() {
           <FeatureIconBox background={palette.amberBg}>
             <UsersRound size={ICON} strokeWidth={SW} color="#92400e" aria-hidden />
           </FeatureIconBox>
-          <h3>Staff & Payroll</h3>
+          <h3>Teachers & Staff</h3>
           <p>
-            Manage staff records, salaries, leave approvals, and monthly payroll — all in one unified
-            HR panel.
+            Manage teacher records and subject assignments, approve leaves, and track availability
+            and workload — all from one panel.
           </p>
         </div>
 
@@ -113,22 +113,22 @@ export function Features() {
           <FeatureIconBox background={palette.blueBg}>
             <CalendarDays size={ICON} strokeWidth={SW} color="#2563eb" aria-hidden />
           </FeatureIconBox>
-          <h3>Timetable Builder</h3>
+          <h3>Timetable & Schedule</h3>
           <p>
-            Drag-and-drop timetable creation with auto conflict detection. Share with teachers and
-            students in one click. Works for every class and section simultaneously.
+            Build a weekly grid of class × day × period × subject × teacher with automatic conflict
+            detection. Everyone opens the app to today&apos;s schedule, ready to go.
           </p>
         </div>
 
         <div className="fb c6 reveal delay1">
           <div className="fb-icon fb-icon--pair" style={{ background: palette.mintBg }}>
             <Bus size={19} strokeWidth={SW} color={palette.jade} aria-hidden />
-            <BookOpen size={19} strokeWidth={SW} color={palette.navy} aria-hidden />
+            <Bell size={19} strokeWidth={SW} color={palette.navy} aria-hidden />
           </div>
-          <h3>Transport & Library</h3>
+          <h3>Transport & Notifications</h3>
           <p>
-            GPS-based bus tracking with route management. Library issue/return tracking with overdue
-            alerts. Both modules included in all plans.
+            Manage buses, routes, stops, drivers, and student enrollments with per-route fee plans.
+            Real-time in-app and push notifications keep parents and staff informed instantly.
           </p>
         </div>
       </div>

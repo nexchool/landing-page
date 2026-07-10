@@ -7,7 +7,6 @@ import { Nav } from "./Nav";
 import { Pricing } from "./Pricing";
 import { StatsStrip } from "./StatsStrip";
 import { Features } from "./Features";
-import { Testimonials } from "./Testimonials";
 
 export function PitchLanding() {
   return (
@@ -18,7 +17,6 @@ export function PitchLanding() {
       <StatsStrip />
       <Features />
       <Pricing />
-      <Testimonials />
       <About />
       <Cta />
       <Footer />

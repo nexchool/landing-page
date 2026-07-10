@@ -9,7 +9,7 @@ import { landingSectionHref } from "./landingSectionQuery";
 
 const NAV_LINKS = [
   { href: landingSectionHref("features"), label: "Features" },
-  { href: landingSectionHref("pricing"), label: "Pricing" },
+  { href: landingSectionHref("pricing"), label: "Contact" },
   { href: landingSectionHref("about"), label: "About" },
 ] as const;
 

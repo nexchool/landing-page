@@ -1,63 +1,38 @@
-import { ArrowRight, Check, Star } from "lucide-react";
-import { PRICING_PLANS } from "./data/pricing";
+import { ArrowRight, Mail, Phone } from "lucide-react";
+import { site } from "@/site";
 import { SectionHead } from "./ui/SectionHead";
 
 export function Pricing() {
   return (
     <section className="pricing" id="pricing" style={{ background: "var(--cream)" }}>
       <SectionHead
-        kicker="Transparent Pricing"
-        title="One Plan for Every School"
-        sub="No hidden charges. No lock-ins. Cancel anytime."
+        kicker="Getting Started"
+        title="Pricing Built Around Your School"
+        sub="Every module included — no per-feature upsells, no lock-ins."
       />
-      <div className="pricing-grid">
-        {PRICING_PLANS.map((plan) => {
-          const isFeatured = plan.variant === "featured";
-          const cardClass = ["pc", "reveal", plan.revealClass, isFeatured ? "featured" : ""]
-            .filter(Boolean)
-            .join(" ");
-
-          return (
-            <div key={plan.id} className={cardClass}>
-              {isFeatured ? (
-                <div className="pop-badge">
-                  <Star size={12} fill="currentColor" strokeWidth={0} aria-hidden />
-                  Most Popular
-                </div>
-              ) : null}
-
-              <div className="plan-name">{plan.name}</div>
-
-              {plan.priceDisplay === "amount" ? (
-                <div className="plan-amount">
-                  <sup>₹</sup>
-                  {plan.amount}
-                </div>
-              ) : (
-                <div className="plan-amount" style={{ fontSize: "2.2rem", paddingTop: "0.4rem" }}>
-                  Custom
-                </div>
-              )}
-
-              <div className="plan-cadence">{plan.cadence}</div>
-              <div className="plan-desc">{plan.description}</div>
-
-              <ul className="plan-feats">
-                {plan.features.map((feat) => (
-                  <li key={feat}>
-                    <Check size={15} strokeWidth={2.25} className="feat-check" aria-hidden />
-                    {feat}
-                  </li>
-                ))}
-              </ul>
-
-              <button type="button" className={isFeatured ? "plan-btn inv" : "plan-btn"}>
-                {plan.cta}
-                <ArrowRight size={16} aria-hidden />
-              </button>
-            </div>
-          );
-        })}
+      <div className="pricing-contact reveal">
+        <div className="pc-contact-badge">
+          <ArrowRight size={12} strokeWidth={2.5} aria-hidden />
+          Let&apos;s talk
+        </div>
+        <h3>
+          Contact us to get started with {site.name} — and make your school
+          <em> paperless and effortless.</em>
+        </h3>
+        <p>
+          Tell us about your school and we&apos;ll set you up with the modules you need, tailored to
+          how you already work. One conversation is all it takes to go fully digital.
+        </p>
+        <div className="pc-contact-btns">
+          <a href={site.phoneHref} className="btn-gold">
+            <Phone size={18} strokeWidth={2} aria-hidden />
+            Call: {site.phoneDisplay}
+          </a>
+          <a href={`mailto:${site.email}`} className="btn-ghost-white">
+            <Mail size={18} strokeWidth={2} aria-hidden />
+            {site.email}
+          </a>
+        </div>
       </div>
     </section>
   );

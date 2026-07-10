@@ -1311,6 +1311,75 @@ nav ul.nav-desktop li {
   background: #b8962f;
 }
 
+/* PRICING — contact panel */
+.pricing-contact {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--ink);
+  border: 1.5px solid var(--ink);
+  border-radius: 24px;
+  padding: clamp(2rem, 5vw, 3.25rem);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-contact::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.pc-contact-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.pricing-contact h3 {
+  font-family: "Clash Display", sans-serif;
+  font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.pricing-contact h3 em {
+  font-style: normal;
+  color: var(--gold);
+}
+
+.pricing-contact p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 540px;
+  margin: 0 auto 1.9rem;
+}
+
+.pc-contact-btns {
+  display: flex;
+  gap: 0.9rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 /* TESTIMONIALS */
 .testi {
   padding: clamp(3.5rem, 10vw, 7rem) clamp(1rem, 5vw, 5vw);

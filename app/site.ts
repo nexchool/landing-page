@@ -12,7 +12,7 @@ export const site = {
 
   /** Default meta description for the home page and similar */
   metaDescription:
-    "Business-grade school management platform for attendance, fees, results, parent communication and more.",
+    "Business-grade school management platform for attendance, fees, timetables, transport, notifications and more.",
 
   /** General inbox — demos, sales, CTA email links */
   email: "hello@nexchool.in",

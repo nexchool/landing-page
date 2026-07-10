@@ -4,15 +4,6 @@ import { site } from "@/site";
 import { landingSectionHref } from "./landingSectionQuery";
 import { HeroDashboard } from "./dashboard/HeroDashboard";
 
-type TrustAvatar = { initials: string; bg: string; fg?: string };
-
-const TRUST_AVATARS: TrustAvatar[] = [
-  { initials: "RK", bg: "#1a3c6e" },
-  { initials: "SP", bg: "#c44569" },
-  { initials: "AM", bg: "#1a7a5e" },
-  { initials: "DV", bg: "#c9a84c", fg: "#1a1a00" },
-];
-
 export function Hero() {
   return (
     <section className="hero">
@@ -22,7 +13,7 @@ export function Hero() {
         <div>
           <div className="hero-eyebrow">
             <div className="eyebrow-dot" />
-            <span className="eyebrow-text">Trusted by 500+ Schools Across India</span>
+            <span className="eyebrow-text">Made in India · Now onboarding schools</span>
           </div>
           <h1>
             Your School.
@@ -32,7 +23,7 @@ export function Hero() {
           </h1>
             <p className="hero-desc">
               {site.name} is the business-grade school management platform that handles attendance,
-              fees, results, parent communication and more — in one beautifully simple system.
+              fees, timetables, transport and notifications — in one beautifully simple system.
             </p>
           <div className="hero-actions">
             <Link href={landingSectionHref("cta")} className="btn-main" scroll={false}>
@@ -43,15 +34,8 @@ export function Hero() {
             </Link>
           </div>
           <div className="hero-trust">
-            <div className="trust-avatars">
-              {TRUST_AVATARS.map(({ initials, bg, fg }) => (
-                <div key={initials} className="av" style={{ background: bg, ...(fg ? { color: fg } : {}) }}>
-                  {initials}
-                </div>
-              ))}
-            </div>
             <div className="trust-text">
-              <strong>500+ school leaders</strong> chose {site.name} this year
+              Book a free demo — <strong>no commitment, no credit card.</strong>
             </div>
           </div>
         </div>

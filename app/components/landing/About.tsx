@@ -1,4 +1,4 @@
-import { Globe2, Headphones, ShieldCheck, Star, Trophy, Zap } from "lucide-react";
+import { Globe2, Headphones, ShieldCheck, Zap } from "lucide-react";
 import { site } from "@/site";
 
 const VALUES = [
@@ -39,9 +39,9 @@ export function About() {
             born from that frustration.
           </p>
           <p className="about-body reveal">
-            Since 2020, we&apos;ve helped 500+ schools across India go fully digital — saving
-            thousands of staff-hours every month and dramatically improving parent trust and
-            satisfaction.
+            With {site.name}, attendance, fees, timetables, transport and parent communication live
+            in one system — replacing scattered registers, spreadsheets and paper. We&apos;re
+            building it hand-in-hand with schools and onboarding our first partners now.
           </p>
           <div className="about-values reveal">
             {VALUES.map(({ icon: Icon, title, description }) => (
@@ -57,45 +57,45 @@ export function About() {
         </div>
         <div className="about-visual-wrap reveal delay1">
           <div className="about-main-card">
-            <div className="amc-num">500+</div>
+            <div className="amc-num">1</div>
             <div className="amc-text">
-              Schools trust {site.name} to manage
+              platform to run your entire school —
               <br />
-              their daily operations
+              from attendance to fees
             </div>
             <div className="amc-grid">
               <div className="amc-cell">
-                <div className="amc-cell-num">2L+</div>
-                <div className="amc-cell-lbl">Students</div>
+                <div className="amc-cell-num">10+</div>
+                <div className="amc-cell-lbl">Modules</div>
               </div>
               <div className="amc-cell">
-                <div className="amc-cell-num">5 yrs</div>
-                <div className="amc-cell-lbl">In Ed-Tech</div>
+                <div className="amc-cell-num">Web + App</div>
+                <div className="amc-cell-lbl">Dashboard & Mobile</div>
               </div>
               <div className="amc-cell">
-                <div className="amc-cell-num">15+</div>
-                <div className="amc-cell-lbl">Team Members</div>
+                <div className="amc-cell-num">100%</div>
+                <div className="amc-cell-lbl">Paperless</div>
               </div>
               <div className="amc-cell">
-                <div className="amc-cell-num">98%</div>
-                <div className="amc-cell-lbl">Satisfaction</div>
+                <div className="amc-cell-num">24/7</div>
+                <div className="amc-cell-lbl">Cloud Access</div>
               </div>
             </div>
           </div>
           <div className="about-side-cards">
             <div className="asc">
               <div className="asc-t">
-                <Trophy size={14} strokeWidth={2} aria-hidden />
-                Award 2024
+                <ShieldCheck size={14} strokeWidth={2} aria-hidden />
+                Secure by design
               </div>
-              <div className="asc-s">Best Ed-Tech Platform · Gujarat</div>
+              <div className="asc-s">Encrypted & privately hosted</div>
             </div>
             <div className="asc">
               <div className="asc-t">
-                <Star size={14} fill="currentColor" strokeWidth={0} aria-hidden />
-                4.9 / 5.0
+                <Globe2 size={14} strokeWidth={2} aria-hidden />
+                Made in India
               </div>
-              <div className="asc-s">Average client rating</div>
+              <div className="asc-s">Built for Indian schools</div>
             </div>
           </div>
         </div>

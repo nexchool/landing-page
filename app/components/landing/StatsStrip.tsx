@@ -1,10 +1,10 @@
 type StatItem = { num: string; label: string; delay?: "delay1" | "delay2" | "delay3" };
 
 const STATS: StatItem[] = [
-  { num: "500+", label: "Schools across India" },
-  { num: "2L+", label: "Students managed daily", delay: "delay1" },
-  { num: "98%", label: "Client satisfaction rate", delay: "delay2" },
-  { num: "5 Min", label: "Average onboarding time", delay: "delay3" },
+  { num: "10+", label: "Modules in one platform" },
+  { num: "Web + App", label: "Dashboard & mobile", delay: "delay1" },
+  { num: "100%", label: "Paperless workflows", delay: "delay2" },
+  { num: "24/7", label: "Cloud-hosted access", delay: "delay3" },
 ];
 
 export function StatsStrip() {

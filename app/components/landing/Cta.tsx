@@ -9,7 +9,7 @@ export function Cta() {
           Ready to make your school <em>unstoppable?</em>
         </h2>
         <p>
-          Join 500+ schools already running smarter with {site.name}. Book a free 30-minute demo —
+          Be one of the first schools to run smarter with {site.name}. Book a free 30-minute demo —
           no commitment, no credit card.
         </p>
         <div className="cta-btns">
