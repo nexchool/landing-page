@@ -124,8 +124,8 @@ a.logo:hover {
 }
 
 .logo-mark {
-  width: 32px;
-  height: 32px;
+  width: auto;
+  height: 34px;
   flex-shrink: 0;
   display: block;
 }
