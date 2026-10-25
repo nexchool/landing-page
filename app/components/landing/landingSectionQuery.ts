@@ -2,9 +2,9 @@
 
 export const LANDING_SECTION_PARAM = "section" as const;
 
-export type LandingSectionId = "features" | "pricing" | "about" | "cta";
+export type LandingSectionId = "features" | "pricing" | "faq" | "about" | "cta";
 
-const VALID = new Set<string>(["features", "pricing", "about", "cta"]);
+const VALID = new Set<string>(["features", "pricing", "faq", "about", "cta"]);
 
 export function isLandingSectionId(value: string | null): value is LandingSectionId {
   return value !== null && VALID.has(value);

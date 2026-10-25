@@ -1,10 +1,12 @@
+import { MODULES } from "./data/modules";
+
 type StatItem = { num: string; label: string; delay?: "delay1" | "delay2" | "delay3" };
 
 const STATS: StatItem[] = [
-  { num: "10+", label: "Modules in one platform" },
-  { num: "Web + App", label: "Dashboard & mobile", delay: "delay1" },
-  { num: "100%", label: "Paperless workflows", delay: "delay2" },
-  { num: "24/7", label: "Cloud-hosted access", delay: "delay3" },
+  { num: `${MODULES.length}`, label: "Modules in one platform" },
+  { num: "Multi-campus", label: "Boards, mediums & streams as settings", delay: "delay1" },
+  { num: "Web + Mobile", label: "Admin dashboard & Android app", delay: "delay2" },
+  { num: "3", label: "App languages: English, हिन्दी, ગુજરાતી", delay: "delay3" },
 ];
 
 export function StatsStrip() {

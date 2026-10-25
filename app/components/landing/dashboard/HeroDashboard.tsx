@@ -25,7 +25,7 @@ export function HeroDashboard() {
             <div className="db-dot" style={{ background: "#febc2e" }} />
             <div className="db-dot" style={{ background: "#28c840" }} />
           </div>
-          <div className="db-title">{site.name} — Admin Dashboard</div>
+          <div className="db-title">{site.name} — Admin Dashboard · sample data</div>
         </div>
         <div className="db-body">
           <div className="mini-stats">

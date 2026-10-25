@@ -9,7 +9,9 @@ import { landingSectionHref } from "./landingSectionQuery";
 
 const NAV_LINKS = [
   { href: landingSectionHref("features"), label: "Features" },
-  { href: landingSectionHref("pricing"), label: "Contact" },
+  { href: "/product", label: "Product" },
+  { href: landingSectionHref("pricing"), label: "Pricing" },
+  { href: landingSectionHref("faq"), label: "FAQ" },
   { href: landingSectionHref("about"), label: "About" },
 ] as const;
 
@@ -55,7 +57,7 @@ export function Nav() {
         <ul className="nav-desktop" aria-label="Primary">
           {NAV_LINKS.map(({ href, label }) => (
             <li key={href}>
-              <Link href={href} scroll={false}>
+              <Link href={href} scroll={href.startsWith("/?") ? false : true}>
                 {label}
               </Link>
             </li>
@@ -91,7 +93,7 @@ export function Nav() {
             <ul>
               {NAV_LINKS.map(({ href, label }) => (
                 <li key={href}>
-                  <Link href={href} scroll={false} onClick={close}>
+                  <Link href={href} scroll={href.startsWith("/?") ? false : true} onClick={close}>
                     {label}
                   </Link>
                 </li>

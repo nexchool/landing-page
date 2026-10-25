@@ -1,26 +1,27 @@
-import { Globe2, Headphones, ShieldCheck, Zap } from "lucide-react";
+import { Globe2, Headphones, Rocket, ShieldCheck } from "lucide-react";
 import { site } from "@/site";
+import { MODULES } from "./data/modules";
 
 const VALUES = [
   {
     icon: Globe2,
     title: "Made in India",
-    description: "Built for Indian schools, in Indian languages",
+    description: "Built around Indian boards and mediums, with Hindi and Gujarati in the app",
   },
   {
     icon: ShieldCheck,
-    title: "Data Secure",
-    description: "Your data is encrypted & privately hosted",
+    title: "Secure by design",
+    description: "Permission-checked requests, separate school data, hosted in India",
   },
   {
     icon: Headphones,
-    title: "24/7 Support",
-    description: "Real humans, not chatbots, always available",
+    title: "Direct support",
+    description: "Reach the founder directly by phone or email",
   },
   {
-    icon: Zap,
-    title: "Always Updating",
-    description: "Free updates every month based on feedback",
+    icon: Rocket,
+    title: "Early-access releases",
+    description: "Every new release reaches every school at no extra cost for now",
   },
 ] as const;
 
@@ -32,16 +33,18 @@ export function About() {
       <div className="about-inner">
         <div>
           <div className="about-label reveal">About {site.name}</div>
-          <h2 className="reveal">Built by people who ran schools. Not just engineers.</h2>
+          <h2 className="reveal">Built end to end by one person, and supported by the same one.</h2>
           <p className="about-body reveal">
-            We are a team of ed-tech professionals and former school administrators who lived the
-            chaos of manual paperwork, missed parent calls, and lost fee records. {site.name} was
-            born from that frustration.
+            {site.name}{" "}
+            is designed, built and supported by its founder. There is no ticket queue
+            or call centre: if you have a question or something isn&apos;t working, you reach the
+            person who built it.
           </p>
           <p className="about-body reveal">
-            With {site.name}, attendance, fees, timetables, transport and parent communication live
-            in one system — replacing scattered registers, spreadsheets and paper. We&apos;re
-            building it hand-in-hand with schools and onboarding our first partners now.
+            Attendance, fees, timetable, examinations, transport, hostel and parent communication
+            live in one system, replacing scattered registers, spreadsheets and paper. We are in
+            early access and building each module around how schools really run, before
+            onboarding our first partner schools.
           </p>
           <div className="about-values reveal">
             {VALUES.map(({ icon: Icon, title, description }) => (
@@ -61,34 +64,34 @@ export function About() {
             <div className="amc-text">
               platform to run your entire school —
               <br />
-              from attendance to fees
+              from admission to exam results
             </div>
             <div className="amc-grid">
               <div className="amc-cell">
-                <div className="amc-cell-num">10+</div>
+                <div className="amc-cell-num">{MODULES.length}</div>
                 <div className="amc-cell-lbl">Modules</div>
               </div>
               <div className="amc-cell">
-                <div className="amc-cell-num">Web + App</div>
-                <div className="amc-cell-lbl">Dashboard & Mobile</div>
+                <div className="amc-cell-num">Multi-campus</div>
+                <div className="amc-cell-lbl">Boards & Mediums</div>
               </div>
               <div className="amc-cell">
-                <div className="amc-cell-num">100%</div>
-                <div className="amc-cell-lbl">Paperless</div>
+                <div className="amc-cell-num">Web + Mobile</div>
+                <div className="amc-cell-lbl">Dashboard & App</div>
               </div>
               <div className="amc-cell">
-                <div className="amc-cell-num">24/7</div>
-                <div className="amc-cell-lbl">Cloud Access</div>
+                <div className="amc-cell-num">3</div>
+                <div className="amc-cell-lbl">App Languages</div>
               </div>
             </div>
           </div>
           <div className="about-side-cards">
             <div className="asc">
               <div className="asc-t">
-                <ShieldCheck size={14} strokeWidth={2} aria-hidden />
-                Secure by design
+                <Headphones size={14} strokeWidth={2} aria-hidden />
+                Direct support
               </div>
-              <div className="asc-s">Encrypted & privately hosted</div>
+              <div className="asc-s">Straight to the founder</div>
             </div>
             <div className="asc">
               <div className="asc-t">

@@ -4,7 +4,9 @@ import { landingSectionHref } from "./landingSectionQuery";
 
 const FOOTER_LINKS = [
   { href: landingSectionHref("features"), label: "Features" },
+  { href: "/product", label: "Product" },
   { href: landingSectionHref("pricing"), label: "Pricing" },
+  { href: landingSectionHref("faq"), label: "FAQ" },
   { href: landingSectionHref("about"), label: "About" },
   { href: "/privacy", label: "Privacy" },
   { href: "/terms", label: "Terms" },
