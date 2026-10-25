@@ -12,7 +12,7 @@ export const site = {
 
   /** Default meta description for the home page and similar */
   metaDescription:
-    "Business-grade school management platform for attendance, fees, timetables, transport, notifications and more.",
+    "School management for one school or a trust of many campuses: admissions, attendance, fees, timetable, examinations and marksheets, transport, hostel, and a mobile app for teachers and families.",
 
   /** General inbox — demos, sales, CTA email links */
   email: "hello@nexchool.in",
@@ -31,6 +31,12 @@ export const site = {
 
   /** `tel:` link target — digits after + as needed for dialer */
   phoneHref: "tel:+917984553527",
+
+  /**
+   * Google Play listing. Leave empty until the app is live: the app section
+   * then shows a "Coming soon" badge instead of a dead link.
+   */
+  playStoreUrl: "",
 
   /** Shown in footer © line */
   copyrightYear: 2026,

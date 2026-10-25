@@ -13,7 +13,7 @@ export function Hero() {
         <div>
           <div className="hero-eyebrow">
             <div className="eyebrow-dot" />
-            <span className="eyebrow-text">Made in India · Now onboarding schools</span>
+            <span className="eyebrow-text">Made in India · Now onboarding early-access schools</span>
           </div>
           <h1>
             Your School.
@@ -21,16 +21,17 @@ export function Hero() {
             <span className="line2">Fully Digital.</span>
             <span className="line3">Finally Effortless.</span>
           </h1>
-            <p className="hero-desc">
-              {site.name} is the business-grade school management platform that handles attendance,
-              fees, timetables, transport and notifications — in one beautifully simple system.
-            </p>
+          <p className="hero-desc">
+            {site.name} runs the whole school, from admission to exam results: attendance, fees,
+            timetable, transport and hostel. It works for a single school or a trust with many
+            campuses, boards and mediums, with a mobile app for teachers and families.
+          </p>
           <div className="hero-actions">
             <Link href={landingSectionHref("cta")} className="btn-main" scroll={false}>
               Book a Free Demo <ArrowRight size={16} className="arrow" aria-hidden />
             </Link>
-            <Link href={landingSectionHref("features")} className="btn-outline" scroll={false}>
-              See Features
+            <Link href="/product" className="btn-outline">
+              Explore the Product
             </Link>
           </div>
           <div className="hero-trust">
